@@ -2,14 +2,12 @@ import matplotlib.pyplot as plt
 
 from random_walk import RandomWalk
 
-
-
-colors = ['inferno', 'cool', 'magma', 'viridis']
-
-for color in colors:
+while True:
     rw = RandomWalk()
-    point_numbers = list(range(rw.num_points))
     rw.fill_walk()
-    plt.scatter(rw.x_values, rw.y_values, c=point_numbers, cmap=color, s=15)
 
-plt.show()
+    plt.scatter(rw.x_values, rw.y_values, c='red', s=15)
+    plt.show()
+
+    keep_running = input('Create another walk? (Y/N)')
+    if keep_running.lower() != 'y': break

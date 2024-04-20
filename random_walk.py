@@ -4,11 +4,11 @@ from random import choice
 class RandomWalk():
     def __init__(self, num_points=5000):
         self.num_points = num_points
-
+        
         # Starting value is always 0,0
         self.x_values = [0]
         self.y_values = [0]
-        self.walk_dis = 0 
+        self.walk_distance = list(range(0, 5))
 
     def fill_walk(self):
         # Keep steps until walk reaches the desired value
@@ -17,11 +17,11 @@ class RandomWalk():
             # Decide which direction to go and how far to go in that direction
 
             x_direction = choice([1, -1]) # Randomly choose aif the value is positive (right) or negative (left)
-            x_distance = choice([0, 1, 2, 3, 4]) # Randomly choose the travel distance
+            x_distance = choice(self.walk_distance) # Randomly choose the travel distance
             x_step = x_direction * x_distance
             
             y_direction = choice([1, -1]) 
-            y_distance = choice([0, 1, 2, 3, 4]) 
+            y_distance = choice(self.walk_distance) 
             y_step = y_direction * y_distance
 
             if x_step == 0 and y_step == 0:
