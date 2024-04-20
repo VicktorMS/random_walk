@@ -3,12 +3,12 @@ import matplotlib.pyplot as plt
 from random_walk import RandomWalk
 
 
-rw = RandomWalk()
 
+colors = ['red', 'blue', 'yellow', 'green']
 
-
-rw.fill_walk()
-
-plt.scatter(rw.x_values, rw.y_values, s=15)
+for color in colors:
+    rw = RandomWalk()
+    rw.fill_walk()
+    plt.scatter(rw.x_values, rw.y_values, c=color, s=15)
 
 plt.show()
