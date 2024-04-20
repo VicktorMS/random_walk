@@ -4,11 +4,12 @@ from random_walk import RandomWalk
 
 
 
-colors = ['red', 'blue', 'yellow', 'green']
+colors = ['inferno', 'cool', 'magma', 'viridis']
 
 for color in colors:
     rw = RandomWalk()
+    point_numbers = list(range(rw.num_points))
     rw.fill_walk()
-    plt.scatter(rw.x_values, rw.y_values, c=color, s=15)
+    plt.scatter(rw.x_values, rw.y_values, c=point_numbers, cmap=color, s=15)
 
 plt.show()
